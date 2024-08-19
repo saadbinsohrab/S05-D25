@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h3 id="line1">আমার সোনার বাংলা</h3>
+        <button id="change-btn">next line</button>
+    </section>
+    <h1>even handler</h1>
+    <p id="sentence">change the sentence</p>
+    <input id="input-field" type="text">
+    <button id="btn">update</button>
+
+    <script>
+        document.getElementById('change-btn').addEventListener('click',function(){
+            document.getElementById('line1').innerText='আমি তোমায় ভালবাসি';
+        })
+
+        // document.getElementById('btn').addEventListener('click',function(){
+        //     const inpuutField =document.getElementById('input-field').value;
+        //     document.getElementById('sentence').innerText=inpuutField;
+        // })
+        document.getElementById('btn').addEventListener('click',function(){
+            const inputField =document.getElementById('input-field');
+            const inputText = inputField.value;
+            document.getElementById('sentence').innerText=inputText;
+            
+            inputField.value='';
+        })
+    </script>
+</body>
+</html>

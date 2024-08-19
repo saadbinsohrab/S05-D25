@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exploring event Delegate</h1>
+    <section id="list-container">
+     <ul id="ul-list">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Veniam, nam suscipit!</li>
+        <li class="item">Voluptas, adipisci omnis?</li>
+        <li class="item">Enim, at cupiditate?</li>
+        <li class="item">Sapiente, mollitia quis!</li>
+        <li class="item">Assumenda, animi commodi.</li>
+     </ul>
+    </section>
+    <button id="btn">add</button>
+    <script>
+        document.getElementById('ul-list').addEventListener('click',function(eventt){
+            eventt.target.parentNode.removeChild(eventt.target);
+            //উপরের এবং নিচের দুই লাইন একই কথা
+            // const ul_list = document.getElementById('ul-list');
+            // ul_list.removeChild(eventt.target);
+        })
+
+        document.getElementById('btn').addEventListener('mouseenter',function(){
+            const ul = document.getElementById('ul-list');
+            const li = document.createElement('li');
+            li.innerText = 'Brand new item add';
+            ul.appendChild(li);
+            li.classList.add('item');
+        })
+    </script>
+</body>
+</html>

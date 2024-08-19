@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #item2 {
+            border: 2px solid tomato;
+        }
+        ul {
+            border: 2px solid skyblue;
+        }
+        section {
+            border: 2px solid green;
+        }
+        body {
+            border: 5px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exploring event Bubble</h1>
+    <section id="list-container">
+        <ul id="ul-list">
+            <li id="item1">Lorem, ipsum dolor.</li>
+            <li id="item2">Doloremque, ut accusantium.</li>
+            <li id="item3">Dolore, ad! Totam?</li>
+            <li id="item4">Recusandae, rerum at.</li>
+            <li id="item5">Laboriosam, soluta eos!</li>
+            <li id="item6">Omnis, debitis odit.</li>
+        </ul>
+    </section>
+    <script>
+          document.getElementById('item2').addEventListener('click',function(event){
+            // event.stopPropagation();     //শুধু বাবল অফ করার জন্য
+            event.stopImmediatePropagation();// বাবল ও একই হান্ডলার অফ করার জন্য
+            console.log('item2 clicked');
+          })
+          document.getElementById('item2').addEventListener('click',function(event){
+            console.log('item2 second clicked');
+          })
+          document.getElementById('item2').addEventListener('click',function(event){
+            console.log('item2 third clicked');
+          })
+
+          document.getElementById('ul-list').addEventListener('click',function(){
+            console.log('ul clicked');
+          })
+          document.getElementById('list-container').addEventListener('click',function(){
+            console.log('list-container clicked');
+          })
+          document.getElementById('list-container').parentNode.addEventListener('click',function(){
+            console.log('body clicked');
+          })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+</head>
+<body>
+    <h1>please add your comment</h1>
+    <div id="comment-container">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam vero magnam quisquam? Minus, fuga magnam! Velit cumque, voluptates excepturi natus odit et explicabo magni sed consectetur quas eum voluptatum sapiente corporis illo quo assumenda nostrum doloremque sit autem officia distinctio nisi commodi odio laborum. Amet doloremque laudantium ex asperiores repudiandae?
+        </p>
+
+        <p>
+            Fugit, nostrum iusto accusantium error modi necessitatibus, dolor magni, architecto a sint ducimus temporibus quo obcaecati deserunt at? Ipsa blanditiis officiis quis aspernatur dolores asperiores cum omnis. Voluptates eum molestiae expedita ipsum eos reprehenderit quisquam doloribus exercitationem deserunt. Consequuntur ullam mollitia enim tenetur deserunt. Dolorem dolorum hic voluptate neque quasi?
+        </p>
+        <p>
+            Incidunt provident non suscipit beatae, aperiam possimus exercitationem iusto magni aut ex quod ut dignissimos id expedita commodi saepe facilis excepturi voluptate impedit ipsum quisquam consectetur? Harum itaque adipisci assumenda illum, quisquam, perferendis excepturi tempore sapiente soluta voluptas quaerat aut reprehenderit distinctio cum porro similique libero voluptatibus sed ducimus id?
+        </p>
+    </div>
+    <div>
+        <textarea name="" id="t-area" cols="100" rows="5"></textarea>
+        <button id="post-btn">post</button>
+    </div>
+
+    <script>
+        document.getElementById('post-btn').addEventListener('click',function(){
+            const textArea = document.getElementById('t-area');
+            const textInput = textArea.value;
+
+            const p = document.createElement('p');
+            p.innerText=textInput;
+            document.getElementById('comment-container').appendChild(p);
+
+            textArea.value= '';
+        })
+    </script>
+</body>
+</html>

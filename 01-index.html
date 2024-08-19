@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="on">on handjer set</h1>
+    </div>
+
+<!-- ----------------------------- no 1--------------------------- -->
+    <button onclick="document.body.style.backgroundColor='red'">click me</button>
+
+<!-- ----------------------------- no 2--------------------------- -->
+    <button onclick="blue()">make blue</button>
+
+<!-- ----------------------------- no 3--------------------------- -->
+    <button id="yellow">make yellow</button>
+
+<!-- ----------------------------- no 3.5-------------------------- -->
+    <button id="pink">make pink</button>
+
+<!-- ----------------------------- no 4---------------------------- -->
+    <button id="sky">make sky</button>
+
+<!-- ---------------------------- most use ------------------------- -->
+    <button id="green">make Green</button>
+
+    <script>
+        // ---------------------most use---------------------------------
+        function blue() {
+            document.body.style.backgroundColor = 'blue';
+        }
+
+        // ---------------------- no 3---------------------------------
+        const yellow = document.getElementById('yellow');
+        yellow.onclick = function yallow(){
+            document.body.style.backgroundColor = 'yellow';
+        }
+
+        // ---------------------- no 3.5--------------------------------
+        const pink = document.getElementById('pink');
+        pink.onclick=pinkk;
+        function pinkk() {
+            document.body.style.backgroundColor='pink';
+        }
+
+        // ---------------------- no 4----------------------------------
+        const sky = document.getElementById('sky');
+        sky.addEventListener('click', function skay(){
+            document.body.style.backgroundColor='skyblue';
+        })
+
+        // ----------------------most use----------------------------------
+        document.getElementById('green').addEventListener('click',function(){
+        document.body.style.backgroundColor='green';
+        })
+
+
+        
+        const onn = document.getElementById('on');
+        onn.onclick= oan;
+        function oan(){
+        const text = document.getElementById('on').parentNode;
+        const hh = document.createElement('h1');
+        hh.innerText='অন হ্যাংলার সেট';
+        text.appendChild(hh);
+
+        hh.style.color='red';
+        hh.style.textAlign='center';
+
+        }
+    </script>
+
+</body>
+</html>
